@@ -1,3 +1,6 @@
+// abby bruskin
+// 9/24/25
+// this tests the linked list class and its methods
 //This file contains an example of how to read user input. Use this in conjunction with your linked list class to test your program.
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,6 +9,7 @@ public class Main{
     public static void main(String[] args)
         throws IOException
     {
+     test();
         // Enter data using BufferReader
         BufferedReader reader = new BufferedReader(
             new InputStreamReader(System.in));
@@ -39,5 +43,20 @@ public class Main{
  
         // Printing the read line
         System.out.println("thanks for playing!");
+       
     }
+
+    public static void test(){
+        LinkedList list = new LinkedList();
+        list.addAValue("dog");
+        list.addAValue("giraffe");
+        list.addAValue("ant");
+        list.addAValue("cat");
+        System.out.println(list.showValues());
+        list.deleteAValue("dog");
+        System.out.println(list.showValues());
+        list.clear();
+        System.out.println(list.showValues());
+    }
+    
 }

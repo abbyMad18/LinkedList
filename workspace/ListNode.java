@@ -1,3 +1,6 @@
+// abby bruskin
+// 9/24/25
+// this establishes a listnode class to be used in the linked list class
 public class ListNode
 {
 	// instance properties
