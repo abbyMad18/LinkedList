@@ -44,14 +44,12 @@ public class LinkedList{
     else{
       ListNode temp = head;
       while((temp.getNext()!= null) && (temp.getNext().getValue().compareTo(line) < 0)){
-        System.out.println(temp.getValue());
         temp = temp.getNext();
       }
       newNode.setNext(temp.getNext());
       temp.setNext(newNode);
     
     }
-    System.out.println(line+ " added");
     return newNode;
   }
 
@@ -67,16 +65,13 @@ public class LinkedList{
     ListNode temp = head;
     if(head.getValue().equals(line)){
       head = head.getNext();
-      System.out.println("found at head");
       return temp;
     }
     else{
     while(temp.getNext()!= null && line.compareTo(temp.getNext().getValue()) != 0){
         temp = temp.getNext();
-        System.out.println("keep looking");
       }
     if(temp.getNext() == null){
-      System.out.println("not found");
       return null;
     }
     else {
@@ -106,4 +101,52 @@ public class LinkedList{
   {
     head = new ListNode(null, null);
   }
+
+  public void reverse(){
+    ListNode temp = null;
+    ListNode temp1 = head;
+    ListNode temp2 = null;
+    while(temp1 != null){
+      temp2 = temp1.getNext();
+      temp1.setNext(temp);
+      temp = temp1;
+      temp1 = temp2;
+    }
+    head = temp;
+  }
+
+ public void nReverse(int n){
+  
+    ListNode temp = null;
+    ListNode temp1 = head;
+    ListNode temp2 = null;
+    ListNode oldTail = null;
+    ListNode newHead = null;
+    boolean first = true;
+  
+    while(temp1 != null){
+      int count = 0;
+      ListNode tempHead = temp1;
+      temp = null;
+      while(temp1 != null && count < n){
+        temp2 = temp1.getNext();
+        temp1.setNext(temp);
+        temp = temp1;
+        temp1 = temp2;
+        count++;
+      }
+      if(first){
+        newHead = temp;
+        first = false;
+      }
+      if(oldTail != null){
+        oldTail.setNext(temp);
+      }
+      oldTail = tempHead;
+    }
+    if(oldTail != null){
+      oldTail.setNext(null);
+    }
+    head = newHead;
+ }
 }
