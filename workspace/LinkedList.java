@@ -54,7 +54,7 @@ public class LinkedList{
   }
 
   //precondition: the list has been initialized
-  //postcondition: the ListNode containing the appropriate value has been deleted and returned.
+  //postcondition: the ListNode containing the appropriate value has been deleted and returned
   //if the value is not in the list returns null
   public ListNode deleteAValue(String line)
   {
@@ -83,7 +83,7 @@ public class LinkedList{
   }
 
   //precondition: the list has been initialized
-  //postconditions: returns a string containing all values appended together with spaces between.
+  //postcondition: returns a string containing all values appended together with spaces between
   public String showValues()
   {
     String result = "";
@@ -96,12 +96,14 @@ public class LinkedList{
   }
 
   //precondition: the list has been initialized
-  //postconditions: clears the list.
+  //postcondition: clears the list
   public void clear()
   {
     head = new ListNode(null, null);
   }
 
+  //precondition: the list has been initialized
+  //postcondition: reverses the list
   public void reverse(){
     ListNode temp = null;
     ListNode temp1 = head;
@@ -115,7 +117,9 @@ public class LinkedList{
     head = temp;
   }
 
- public void nReverse(int n){
+ //precondition: the list has been initialized
+  //postcondition: reverses the list in chunks of n
+  public void nReverse(int n){
   
     ListNode temp = null;
     ListNode temp1 = head;
